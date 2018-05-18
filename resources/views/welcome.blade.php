@@ -20,6 +20,7 @@
               <li class="nav-item active">
                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
               </li>
+              <!--
               <li class="nav-item">
                  <a class="nav-link" href="#">Features</a>
               </li>
@@ -28,19 +29,34 @@
               </li>
               <li class="nav-item">
                  <a class="nav-link disabled" href="#">Disabled</a>
-              </li>
+              </li>-->
             </ul>
           </div>
       </nav>
 
       <div class="jumbotron">
-        <form class="" action="index.html" method="post">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                   <div class="panel panel-default">
 
-        </form>
+
+                         <div class="panel-body">
+                             <form>
+                               <textarea class="ckeditor" name="editor1" id="editor1" rows="10" cols="80">
+
+                               </textarea>
+                             </form>
+                         </div>
+                   </div>
+                </div>
+              </div>
+           </div>
       </div>
 
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+      <script src="{{ asset('/vendors/ckeditor/ckeditor.js') }}"></script>
     </body>
 </html>
