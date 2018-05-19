@@ -20,42 +20,44 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item active">
-                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <li class="nav-item">
+                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
               </li>
 
               <li class="nav-item">
                  <a class="nav-link" href="#">Registrar correos</a>
               </li>
-              <li class="nav-item">
-                 <a class="nav-link" href="/lista">Ver correos</a>
+              <li class="nav-item active">
+                 <a class="nav-link" href="#">Ver correos</a>
               </li>
             </ul>
           </div>
       </nav>
 
-      <div class="jumbotron orange">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                   <div class="panel panel-default">
+      <table class="table text-white">
+        <thead>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo 1</th>
+          <th>Correo 2</th>
+          <th>Carrera</th>
+        </thead>
+        <tbody>
+          @foreach($estudiantes as $item)
+              <tr>
+                <td>{{$item->nombre}}</td>
+                <td>{{$item->apellido}}</td>
+                <td>{{$item->correo}}</td>
+                <td>{{$item->correo2}}</td>
+                <td>{{$item->nombre_carrera}}</td>
+              </tr>
+          @endforeach
+        </tbody>
+      </table>
+      {{$estudiantes->links()}}
 
-
-                         <div class="panel-body">
-                             <form method="post" action="/postEmail">
-                               <textarea class="ckeditor" name="editor1" id="editor1" rows="10" cols="80">
-
-                               </textarea>
-                               <br>
-                               <input type="submit" name="" value="Enviar" class="btn btn-primary">
-                             </form>
-                         </div>
-                   </div>
-                </div>
-              </div>
-           </div>
-      </div>
-
+    <br>
+    <br>
     <footer>
        <div class="container-fluid bg-primary py-3">
           <div class="container">
