@@ -43,6 +43,7 @@
 
                          <div class="panel-body">
                              <form method="post" action="/postEmail">
+                               {{ csrf_field() }}
                                <textarea class="ckeditor" name="editor1" id="editor1" rows="10" cols="80">
 
                                </textarea>

@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post("/postEmail","PostController@mail");
+Route::post("postEmail","PostController@mail");
 
 Route::get("/lista","ListaController@index");

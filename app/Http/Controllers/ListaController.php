@@ -10,6 +10,7 @@ class ListaController extends Controller
 {
     public function index(){
 
+      
        $estudiantes = DB::table("estudiantes")
                       ->join("carreras","estudiantes.idestudiantes","=","carreras.idcarrera")
                       ->paginate(10);
