@@ -8,6 +8,38 @@ use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
+
+    public function index(){
+
+      $arrayCarreras = DB::table("carreras")->get();
+      return view("welcome");
+    }
+
+    public function registroEstudiante(Request $request){
+      $nombre = $request->input("nombre");
+      $apellido = $request->input("apellido");
+      $correo1 = $request->input("correo1");
+      $correo2 = $request->input("correo2");
+      $carrera = $request->input("carrera");
+
+      $idCarrera = DB::table("carreras")
+                       ->where("nombre_carrera",$carrera)
+                       ->value("idcarrera");
+
+      DB::table("estudiantes")
+           ->insert([
+             "nombre" => $nombre,
+             "apellido" => $apellido,
+             "correo" => $correo1,
+             "correo2" => $correo2,
+             "fk_carrera" => $idCarrera
+           ]);
+
+      return view("welcome");
+
+
+    }
+
     public function mail(Request $request){
 
       $body = $request->input("editor1");

@@ -25,7 +25,7 @@
               </li>
 
               <li class="nav-item">
-                 <a class="nav-link" href="#">Registrar correos</a>
+                 <a class="nav-link" href="#" data-toggle="modal" data-target="#myModal">Registrar correos</a>
               </li>
               <li class="nav-item">
                  <a class="nav-link" href="/lista">Ver correos</a>
@@ -92,6 +92,59 @@
        </div>
     </div>
 </footer>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Registro de correos</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <form action="/registroEstudiante" method="post">
+          {{ csrf_field() }}
+          <div class="form-group">
+            <label for="email">Nombre:</label>
+            <input type="text" class="form-control" name="nombre" required="">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Apellido:</label>
+            <input type="text" class="form-control" name="apellido" required="">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Correo 1:</label>
+            <input type="text" class="form-control" name="correo1" required="">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Correo 2:</label>
+            <input type="text" class="form-control" name="correo2">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Carrera:</label>
+            <select class="" name="carrera" class="form-control">
+              @foreach($arrayCarreras as $carrera)
+                <option value="{{$carrera->nombre_carrera}}">{{$carrera->nombre_carrera}}</option>
+              @endforeach
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 
       <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

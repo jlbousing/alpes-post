@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',"PostController@index");
+
+Route::post("registroEstudiante","PostController@registroEstudiante");
 
 Route::post("postEmail","PostController@mail");
 
